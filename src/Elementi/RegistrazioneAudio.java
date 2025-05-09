@@ -14,7 +14,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     public RegistrazioneAudio(String titolo, int durata, int volume) {
         super(titolo);
         this.durata = durata;
-        this.volume = Math.max(0, Math.min(10, volume));
+        this.volume = Math.max(0, Math.min(100, volume));
     }
 
     // Implementazione del metodo play() dall'interfaccia Riproducibile.
@@ -40,7 +40,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
 
     // Imposta il livello del volume della registrazione audio.
     public void setVolume(int volume) {
-        this.volume = Math.max(0, Math.min(10, volume));
+        this.volume = Math.max(0, Math.min(100, volume));
     }
 
     // Implementazione del metodo show() per la registrazione audio.
@@ -59,7 +59,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         String titolo = scanner.nextLine();
         System.out.print("Inserisci la durata della registrazione (in secondi): ");
         int durata = scanner.nextInt();
-        System.out.print("Inserisci il livello del volume (0-10): ");
+        System.out.print("Inserisci il livello del volume (0-100): ");
         int volume = scanner.nextInt();
         scanner.nextLine();
         return new RegistrazioneAudio(titolo, durata, volume);

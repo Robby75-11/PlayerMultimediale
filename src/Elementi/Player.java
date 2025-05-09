@@ -50,7 +50,7 @@ public class Player {
         }
     }
 
-    //
+    //Metodo principale per l'interazione con l'utente e l'esecuzione degli elementi.
 
     public void esegui() {
         int scelta;
@@ -76,6 +76,9 @@ public class Player {
         System.out.println("Chiusura del Player Multimediale.");
         scanner.close();
     }
+
+
+//Metodo main, punto di ingresso per l'esecuzione del programma.
 
     public static void main(String[] args) {
         Player player = new Player();

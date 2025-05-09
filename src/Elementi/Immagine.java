@@ -37,7 +37,7 @@ public class Immagine extends ElementoMultimediale {
     public  static Immagine creaImmagine(Scanner scanner) {
         System.out.println("Inserisci il titolo dell'immagine: ");
         String titolo = scanner.nextLine();
-        System.out.println("Inserisci il livello di luminosita (intero positivo): ");
+        System.out.println("Inserisci il livello di luminosita (0-10): ");
         int luminosita = scanner.nextInt();
         scanner.nextLine();
         return new  Immagine(titolo, luminosita);

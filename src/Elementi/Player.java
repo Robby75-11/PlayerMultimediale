@@ -55,14 +55,36 @@ public class Player {
     public void esegui() {
         int scelta;
         do {
+            System.out.println("Seleziona un'azione:");
+            System.out.println("1-5: Esegui elemento");
+            System.out.println("6: Alza volume (elemento selezionato)");
+            System.out.println("7: Abbassa volume (elemento selezionato)");
+            System.out.println("0: Esci");
+            System.out.print("Scelta: ");
             System.out.println("Seleziona un elemento da eseguire (1-" + numeroElementi + ", 0 per uscire):");
+
             if (scanner.hasNextInt()) {
                 scelta = scanner.nextInt();
                 scanner.nextLine();
 
                 if (scelta >= 1 && scelta <= numeroElementi) {
                     elementi[scelta - 1].show();
-                } else if (scelta != 0) {
+                } else if (scelta == 6) {
+                    if (elementoSelezionatoIndice != -1 && elementi[elementoSelezionatoIndice] instanceof RegistrazioneAudio) {
+                        ((RegistrazioneAudio) elementi[elementoSelezionatoIndice]).alzaVolume();
+                    } else {
+                        System.out.println("Nessun elemento audio selezionato o elemento non è audio.");
+                    }
+                } else if (scelta == 7) {
+                    if (elementoSelezionatoIndice != -1 && elementi[elementoSelezionatoIndice] instanceof RegistrazioneAudio) {
+                        ((RegistrazioneAudio) elementi[elementoSelezionatoIndice]).abbassaVolume();
+                    } else {
+                        System.out.println("Nessun elemento audio selezionato o elemento non è audio.");
+                    }
+                } else if (scelta == 0) {
+                    System.out.println("Chiusura del Player Multimediale.");
+                    break;
+                } else {
                     System.out.println("Scelta non valida.");
                 }
             } else {
@@ -71,11 +93,12 @@ public class Player {
                 scelta = -1;
             }
             System.out.println();
-        } while (scelta != 0);
-
-        System.out.println("Chiusura del Player Multimediale.");
+        } while (true); // Modificato a true per gestire il break
         scanner.close();
     }
+
+    // Aggiungi una variabile di istanza per tenere traccia dell'elemento selezionato
+    private int elementoSelezionatoIndice = -1;
 
 
 //Metodo main, punto di ingresso per l'esecuzione del programma.

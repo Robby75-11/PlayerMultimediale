@@ -3,10 +3,15 @@ package Elementi;
 import java.util.Scanner;
 
 
+// Classe principale che gestisce la creazione e l'esecuzione
+// degli elementi multimediali.
+
 public class Player {
     private ElementoMultimediale[] elementi = new ElementoMultimediale[5];
     private Scanner scanner = new Scanner(System.in);
     private int numeroElementi = 0;
+
+    //Metodo per aggiungere un elemento multimediale all'array.
 
     public void aggiungiElemento(ElementoMultimediale elemento) {
         if (numeroElementi < elementi.length) {
@@ -15,6 +20,9 @@ public class Player {
             System.out.println("Limite di elementi raggiunto.");
         }
     }
+
+    // Metodo per creare gli elementi multimediali leggendo l'input da tastiera.
+    // Crea fino a 5 elementi.
 
     public void creaElementi() {
         for (int i = 0; i < elementi.length; i++) {
@@ -41,6 +49,8 @@ public class Player {
             System.out.println();
         }
     }
+
+    //
 
     public void esegui() {
         int scelta;

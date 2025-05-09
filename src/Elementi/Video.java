@@ -15,7 +15,7 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
     public Video(String titolo, int durata, int volume, int luminosita) {
         super(titolo);
         this.durata = durata;
-        this.volume = Math.max(0, Math.min(100, volume));
+        this.volume = Math.max(0, Math.min(10, volume));
         this.luminosita = Math.max(0, luminosita);
 
     }
@@ -44,7 +44,7 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
 // Imposta il livello del volume del video.
 
     public void setVolume(int volume) {
-        this.volume = Math.max(0, Math.min(100, volume));
+        this.volume = Math.max(0, Math.min(10, volume));
     }
 
     public int getLuminosita() {
@@ -70,7 +70,7 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
         String titolo = scanner.nextLine();
         System.out.print("Inserisci la durata del video (in secondi): ");
         int durata = scanner.nextInt();
-        System.out.print("Inserisci il livello del volume (0-100): ");
+        System.out.print("Inserisci il livello del volume (0-10): ");
         int volume = scanner.nextInt();
         System.out.print("Inserisci il livello di luminosità (0-10): ");
         int luminosita = scanner.nextInt();

@@ -43,6 +43,34 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         this.volume = Math.max(0, Math.min(10, volume));
     }
 
+    /**
+     * Aumenta il livello del volume della registrazione audio, fino a un massimo di 10.
+     */
+    public void alzaVolume() {
+        if (volume < 10) {
+            volume++;
+            System.out.println("Volume alzato a: " + volume);
+        } else {
+            System.out.println("Il volume è già al massimo.");
+        }
+    }
+
+    /**
+     * Abbassa il livello del volume della registrazione audio, fino a un minimo di 0.
+     */
+
+    public void abbassaVolume() {
+        if (volume > 0) {
+            volume--;
+            System.out.println("Volume abbassato a: " + volume);
+        } else {
+            System.out.println("Il volume è già al minimo.");
+        }
+    }
+
+
+
+
     // Implementazione del metodo show() per la registrazione audio.
 
     @Override

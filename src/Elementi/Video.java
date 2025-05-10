@@ -14,7 +14,7 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
 
     public Video(String titolo, int durata, int volume, int luminosita) {
         super(titolo);
-        this.durata = durata;
+        this.durata = Math.max(0,durata);
         this.volume = Math.max(0, Math.min(10, volume));
         this.luminosita = Math.max(0, luminosita);
 
@@ -25,10 +25,12 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
 
     @Override
     public void play() {
-        System.out.println("VIDEO: " + getTitolo() + " " + "!".repeat(volume) + "*".repeat(luminosita));
+        System.out.println("VIDEO: " + getTitolo());
+        for (int i = 0; i < durata; i++) {
+            System.out.println("RIPRODUZIONE: " + "!".repeat(volume) + "*".repeat(luminosita));
+        }
+        System.out.println("Fine riproduzione.");
     }
-
-
 // implementazione del metodo getDurata() dall'interfaccia Riproducibile.
 
     @Override

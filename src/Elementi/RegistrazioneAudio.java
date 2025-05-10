@@ -21,8 +21,13 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     // Stampa il titolo seguito da punti esclamativi in base al volume.
 
     @Override
+
     public void play() {
-        System.out.println("AUDIO: " + getTitolo() + " " + "!".repeat(volume));
+        System.out.println("AUDIO: " + getTitolo());
+        for (int i = 0; i < durata; i++) {
+            System.out.println("RIPRODUZIONE:  " + "!".repeat(volume));
+        }
+        System.out.println("Fine riproduzione.");
     }
 
     // Implementazione del metodo getDurata() dall'interfaccia Riproducibile.

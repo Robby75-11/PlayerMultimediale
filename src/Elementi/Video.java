@@ -25,11 +25,10 @@ public class Video extends  ElementoMultimediale implements Riproducibile {
 
     @Override
     public void play() {
-        System.out.println("VIDEO: " + getTitolo());
         for (int i = 0; i < durata; i++) {
-            System.out.println("RIPRODUZIONE: " + "!".repeat(volume) + "*".repeat(luminosita));
+            System.out.println(" " + getTitolo() + "  " + "!".repeat(volume) + "*".repeat(luminosita));
         }
-        System.out.println("Fine riproduzione.");
+        System.out.println("VIDEO: " + getTitolo());
     }
 // implementazione del metodo getDurata() dall'interfaccia Riproducibile.
 

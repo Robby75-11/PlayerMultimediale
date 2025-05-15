@@ -23,11 +23,10 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     @Override
 
     public void play() {
-
         for (int i = 0; i < durata; i++) {
             System.out.println("  " + getTitolo()  + "!".repeat(volume));
         }
-        System.out.println("AUDIO: "  + getTitolo());
+        System.out.println("AUDIO: "  + getTitolo()  + "- Fine riproduzione.");
     }
 
     // Implementazione del metodo getDurata() dall'interfaccia Riproducibile.
